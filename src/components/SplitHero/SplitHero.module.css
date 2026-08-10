@@ -76,7 +76,7 @@
   right: var(--content-padding-desktop);
   bottom: var(--space-2xl);
 
-  padding: 12px 20px;
+  padding: 8px 16px;
 
   background: rgba(255, 255, 255, 0.95);
 
@@ -87,7 +87,13 @@
   font-size: var(--font-size-base);
 
   backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
 }
+
 
 /* TABLET */
 

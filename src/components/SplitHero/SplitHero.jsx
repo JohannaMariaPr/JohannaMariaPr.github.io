@@ -1,4 +1,5 @@
 import styles from './SplitHero.module.css'
+import { LuMapPin } from "react-icons/lu";
 
 function SplitHero({
   children,
@@ -23,6 +24,7 @@ function SplitHero({
 
         {location && (
           <div className={styles.location}>
+            <LuMapPin className={styles.locationIcon} />
             {location}
           </div>
         )}

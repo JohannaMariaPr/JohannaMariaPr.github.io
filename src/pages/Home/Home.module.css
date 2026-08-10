@@ -14,7 +14,7 @@
   margin: auto 0;
   padding-top: 140px;
 
-  max-width: 480px;
+  max-width: 450px;
 
 }
 
@@ -38,8 +38,153 @@
   text-decoration: none;
 
   border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.30);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15) inset;
-  border: 1px solid rgba(255, 255, 255, 1);
 
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+
+}
+
+/* ABOUT ME */
+
+.about {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  align-items: center;
+
+  gap: var(--space-xl);
+
+  padding:
+    var(--space-2xl)
+    var(--content-padding-desktop);
+}
+
+.aboutImageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutImage {
+  width: 380px;
+  aspect-ratio: 1;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+}
+
+.aboutContent {
+  max-width: 600px;
+}
+
+.aboutLocation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+
+  color: var(--color-gold);
+
+  font-size: var(--font-size-base);
+}
+
+.aboutLocation svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.8;
+}
+
+.aboutContent h2 {
+  margin: 0 0 var(--space-sm);
+
+  color: var(--color-navy);
+
+  font-family: var(--font-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-regular);
+  font-style: bold;
+}
+
+.aboutQuote {
+  margin: 0 0 var(--space-md);
+
+  color: var(--color-navy);
+
+  font-family: var(--font-primary);
+  font-size: var(--font-size-md);
+  font-style: italic;
+}
+
+.aboutText {
+  max-width: 600px;
+
+  margin: 0;
+
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+}
+
+.aboutLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: var(--space-md);
+
+  color: var(--color-gold);
+
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  text-decoration: none;
+}
+
+.aboutLink span {
+  transition: transform var(--transition-fast);
+}
+
+.aboutLink:hover span {
+  transform: translateX(5px);
+}
+
+/* RESPONSIVE 900px */
+@media (max-width: 900px) {
+  .about {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-lg);
+
+    padding:
+      var(--space-xl)
+      var(--content-padding-tablet);
+  }
+
+  .aboutImage {
+    width: min(360px, 80%);
+  }
+
+  .aboutContent {
+    max-width: 100%;
+  }
+}
+
+/* RESPONSIVE 480px */
+@media (max-width: 480px) {
+  .about {
+    padding:
+      var(--space-lg)
+      var(--content-padding-mobile);
+  }
+
+  .aboutImage {
+    width: min(280px, 85%);
+  }
 }

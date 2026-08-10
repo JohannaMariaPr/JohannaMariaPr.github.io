@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import styles from './Header.module.css'
+import {
+  LuChevronDown
+} from "react-icons/lu";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -79,7 +82,7 @@ function Header() {
               }`}
               aria-hidden="true"
             >
-              ▾
+              <LuChevronDown />
             </span>
           </button>
 
@@ -128,11 +131,11 @@ function Header() {
 
         <button
           type="button"
-          className={styles.languageButton}
+          className={styles.dropdownButton}
           aria-label="Select language"
         >
           EN
-          <span aria-hidden="true">▾</span>
+          <span className={styles.chevron} aria-hidden="true"><LuChevronDown /></span>
         </button>
       </nav>
     </header>

@@ -73,8 +73,7 @@
 }
 
 .nav a,
-.dropdownButton,
-.languageButton {
+.dropdownButton {
   color: var(--color-white);
 
   font: inherit;
@@ -94,8 +93,7 @@
 }
 
 .nav a:hover,
-.dropdownButton:hover,
-.languageButton:hover {
+.dropdownButton:hover {
   opacity: 0.7;
 }
 
@@ -120,15 +118,21 @@
   display: flex;
   align-items: center;
 
-  gap: 4px;
+  gap: 5px;
 }
 
 .chevron {
-  display: inline-block;
-
-  font-size: var(--font-size-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   transition: transform var(--transition-fast);
+}
+
+.chevron svg {
+  width: 14px;
+  height: 14px;
+  stroke-width: 1.8;
 }
 
 .chevronOpen {
@@ -182,15 +186,6 @@
   font-size: var(--font-size-xs);
 
   opacity: 0.65;
-}
-
-/* LANGUAGE */
-
-.languageButton {
-  display: flex;
-  align-items: center;
-
-  gap: 4px;
 }
 
 /* MOBILE BUTTON */
@@ -267,8 +262,7 @@
   }
 
   .nav a,
-  .dropdownButton,
-  .languageButton {
+  .dropdownButton {
     width: 100%;
 
     padding: 14px 0;
@@ -317,11 +311,6 @@
     padding: 10px var(--space-xs);
   }
 
-  .languageButton {
-    justify-content: flex-start;
-
-    gap: 4px;
-  }
 }
 
 /* SMALL MOBILE */
