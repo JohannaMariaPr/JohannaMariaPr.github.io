@@ -1,0 +1,233 @@
+.carouselWrapper {
+  position: relative;
+
+  width: 100%;
+  max-width: var(--max-width);
+
+  margin: 0 auto;
+}
+
+/* CAROUSEL */
+
+.carousel {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  overflow: hidden;
+
+  padding-bottom: var(--space-xl);
+}
+
+/* CARD WRAPPERS */
+
+.cardWrapper {
+  flex-shrink: 0;
+
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+/* SIDE CARDS */
+
+.carousel > :first-child,
+.carousel > :last-child {
+  margin-top: 40px;
+}
+
+.clickableCard {
+  cursor: pointer;
+}
+
+.clickableCard:hover {
+  transform: translateY(-4px);
+}
+
+.clickableCard:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 6px;
+}
+
+/* ACTIVE CENTER CARD */
+
+.carousel > :nth-child(2) {
+  position: relative;
+  z-index: 2;
+}
+
+/* CAROUSEL BUTTONS */
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  padding: 0;
+
+  color: var(--color-navy);
+  background: var(--color-white);
+
+  border: 1px solid var(--color-gold);
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.carouselButton svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 1.8;
+}
+
+.previousButton {
+  left: calc(50% - 300px);
+}
+
+.nextButton {
+  right: calc(50% - 300px);
+}
+
+.carouselButton:hover {
+  color: var(--color-white);
+  background: var(--color-navy);
+}
+
+.previousButton:hover {
+  transform: translateY(-50%) translateX(-3px);
+}
+
+.nextButton:hover {
+  transform: translateY(-50%) translateX(3px);
+}
+
+.carouselButton:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .carousel {
+    gap: 16px;
+
+    padding:
+      var(--space-lg)
+      52px
+      var(--space-xl);
+  }
+
+  .carousel > :first-child,
+  .carousel > :last-child {
+    margin-top: 24px;
+  }
+
+  .carouselButton {
+    width: 38px;
+    height: 38px;
+  }
+
+  .carouselButton svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .previousButton {
+    left: 10px;
+  }
+
+  .nextButton {
+    right: 10px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .carouselWrapper {
+    width: 100%;
+    padding-bottom: 96px;
+  }
+
+  .carousel {
+    width: 100%;
+
+    gap: 0;
+
+    padding:
+      var(--space-md)
+      var(--content-padding-mobile)
+      var(--space-md);
+  }
+
+  /* Only show active card */
+
+  .carousel > :first-child,
+  .carousel > :last-child {
+    display: none;
+  }
+
+  .carousel > :nth-child(2) {
+    width: 100%;
+    max-width: 100%;
+
+    margin: 0;
+  }
+
+  .cardWrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Navigation underneath */
+
+  .carouselButton {
+    top: auto;
+    bottom: 32px;
+
+    width: 64px;
+    height: 64px;
+
+    transform: none;
+    
+  }
+
+  .carouselButton svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .previousButton {
+    left: calc(50% - 72px);
+  }
+
+  .nextButton {
+    right: calc(50% - 72px);
+  }
+
+  .previousButton:hover,
+  .nextButton:hover {
+    transform: none;
+  }
+}

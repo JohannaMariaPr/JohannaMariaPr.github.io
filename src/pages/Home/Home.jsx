@@ -7,6 +7,8 @@ LuArrowDown,
 LuMapPin
 } from "react-icons/lu";
 import { NavLink } from 'react-router-dom'
+import ProjectCarousel from '../../components/ProjectCarousel/ProjectCarousel';
+import CTASection from '../../components/CTASection/CTASection';
 
 function Home() {
   return (
@@ -37,6 +39,7 @@ function Home() {
     />
   </div>
 
+
   <div className={styles.aboutContent}>
     <div className={styles.aboutLocation}>
       <LuMapPin />
@@ -63,8 +66,16 @@ function Home() {
   <span aria-hidden="true">→</span>
   </NavLink>
   </div>
+</section>
 
-  
+<section id="projects" className={styles.projectCarousel}>
+  <span className={styles.projectCarouselTitle}>- SELECTED WORK</span>
+  <h2>Some projects I've worked on</h2>
+  <ProjectCarousel />
+</section>
+
+<section className={styles.ctaSection}>
+  <CTASection />
 </section>
 
   </>   

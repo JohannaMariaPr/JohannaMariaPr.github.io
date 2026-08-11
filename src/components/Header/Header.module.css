@@ -1,16 +1,34 @@
 .header {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 100;
-  width: 100%;
 
-  max-width: 1920px;
+  width: 100%;
+  max-width: var(--max-width);
 
   display: grid;
   grid-template-columns: 40% 60%;
   align-items: start;
+}
+
+/* HOME: sits on top of hero */
+.headerOverlay {
+  position: absolute;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+  color: var(--color-white);
+}
+
+/* OTHER PAGES: takes up actual space */
+.headerRegular {
+  position: relative;
+
+  margin: 0 auto;
+
+  transform: none;
+  color: var(--color-navy);
+  background: var(--color-white);
 }
 
 /* BRAND */
@@ -74,7 +92,7 @@
 
 .nav a,
 .dropdownButton {
-  color: var(--color-white);
+ 
 
   font: inherit;
   text-decoration: none;
@@ -104,8 +122,15 @@
 /* SEPARATORS */
 
 .separator {
-  color: rgba(255, 255, 255, 0.65);
   font-size: var(--font-size-xs);
+}
+
+.headerRegular .separator {
+  color: rgba(1, 45, 94, 0.45);
+}
+
+.headerOverlay .separator {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 /* PROJECTS DROPDOWN */
@@ -167,13 +192,22 @@
 
   padding: 12px var(--space-sm);
 
-  color: var(--color-navy);
 
   text-transform: none;
 
   border-radius: var(--radius-xs);
 
   transition: background var(--transition-fast);
+}
+
+.headerRegular .nav a,
+.headerRegular .dropdownButton {
+  color: var(--color-navy);
+}
+
+.headerOverlay .nav a,
+.headerOverlay .dropdownButton {
+  color: var(--color-white);
 }
 
 .dropdownMenu a:hover {
@@ -255,6 +289,8 @@
     background: var(--color-white);
 
     box-shadow: var(--shadow-sm);
+
+    color:  var(--color-navy);
   }
 
   .navOpen {
@@ -318,15 +354,21 @@
 @media (max-width: 480px) {
   .header {
     padding:
-      14px
+      20px
       var(--page-padding-mobile);
+
   }
 
   .name {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
   }
 
   .role {
     font-size: var(--font-size-xs);
   }
+
+  .headerOverlay .nav a,
+.headerOverlay .dropdownButton {
+  color: var(--color-navy);
+}
 }

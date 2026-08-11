@@ -15,7 +15,6 @@
   padding-top: 140px;
 
   max-width: 450px;
-
 }
 
 .highlight {
@@ -45,10 +44,11 @@
   display: flex;
   align-items: center;
   gap: 5px;
-
-
 }
 
+.ctaIcon {
+  color: var(--color-gold);
+}
 /* ABOUT ME */
 
 .about {
@@ -63,8 +63,10 @@
   gap: var(--space-xl);
 
   padding:
-    var(--space-2xl)
+    64px
     var(--content-padding-desktop);
+
+  background-color: var(--color-cream);
 }
 
 .aboutImageWrapper {
@@ -91,6 +93,8 @@
   align-items: center;
   gap: 6px;
 
+  margin-bottom: 4px;
+
 
   color: var(--color-gold);
 
@@ -110,8 +114,7 @@
 
   font-family: var(--font-primary);
   font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-regular);
-  font-style: bold;
+  font-weight: var(--font-weight-semibold);
 }
 
 .aboutQuote {
@@ -155,6 +158,43 @@
   transform: translateX(5px);
 }
 
+.projectCarousel {
+  padding-top: var(--space-xl);
+
+
+  background-color: var(--color-white);
+}
+
+.projectCarouselTitle {
+  color: var(--color-gold);
+  padding-left: var(--content-padding-desktop);
+
+  font-size: var(--font-size-md);
+}
+
+.projectCarousel h2 {
+  margin: 0 0 0;
+  padding-left: var(--content-padding-desktop);
+
+
+  color: var(--color-navy);
+
+  font-family: var(--font-secondary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+.ctaSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-xl);
+  margin: auto 0;
+}
+
+
 /* RESPONSIVE 900px */
 @media (max-width: 900px) {
   .about {
@@ -178,13 +218,53 @@
 
 /* RESPONSIVE 480px */
 @media (max-width: 480px) {
+
+  .hero {
+    padding-bottom: 0;
+  }
+  
+  .title {
+    font-size: 40px;
+    padding-left: var(--page-padding-mobile);
+    padding-right: var(--page-padding-mobile);
+    padding-top: 100px;
+    margin-top: 0px;
+    margin-bottom: 32px;
+  }
+
+  .cta {
+    margin-left: var(--page-padding-mobile);
+    margin-bottom: 32px;
+  }
+
   .about {
     padding:
-      var(--space-lg)
+      32px
       var(--content-padding-mobile);
+      margin-bottom: 0;
+      }
+  
+  .aboutContent h2 {
+    font-size: var(--font-size-xl);
   }
+    
 
   .aboutImage {
     width: min(280px, 85%);
   }
+
+
+  .projectCarousel {
+    padding-top: 32px;
+  }
+  .projectCarouselTitle {
+    padding-left: var(--content-padding-mobile);
+    font-size: var(--font-size-base);
+  }
+
+  .projectCarousel h2 {
+    padding-left: var(--content-padding-mobile);
+    font-size: var(--font-size-xl);
+  }
+
 }

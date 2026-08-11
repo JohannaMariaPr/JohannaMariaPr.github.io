@@ -5,7 +5,7 @@ import {
   LuChevronDown
 } from "react-icons/lu";
 
-function Header() {
+function Header({ overlay = false }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [projectsOpen, setProjectsOpen] = useState(false)
 
@@ -15,7 +15,9 @@ function Header() {
   }
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${
+        overlay ? styles.headerOverlay : styles.headerRegular
+      }`}>
       
       <div className={styles.brand}>
         <span className={styles.name}>Johanna Maria Prinz</span>
